@@ -3,23 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: slouham <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 13:35:13 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/16 14:52:51 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/16 16:56:55 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf"
+#include "ft_printf.h"
 
 static	int		format()
 {
-	if (format[] == 'c')
-		ft_putchar()
-	else if (format[] == 'd' || format[] == 'i')
-		ft_putnbr()
-	else if (format[] == 's')
-		ft_putstr()
+	int	i;
+	int	result;
+
+	i = 0;
+	if (format[i] == 'c')
+		result += (va_arg(list, int));
+	//else if (format[] == 'd' || format[] == 'i')
+	//	ft_putnbr()
+	//else if (format[] == 's')
+	//	ft_putstr()
 }
 
 int		ft_printf(const char *str, ...)
