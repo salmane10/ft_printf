@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 17:03:07 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/20 15:00:54 by slouham          ###   ########.fr       */
+/*   Created: 2024/01/20 12:11:37 by slouham           #+#    #+#             */
+/*   Updated: 2024/01/20 16:17:22 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int     ft_putstr(char *s)
+int ft_putnbr(int n)
 {
-    int i;
+    int count;
 
-    i = 0;
-    if (!s)
+    count = 0;
+    if (n == -2147483648)
+        count = ft_putstr("-2147483648");
+    else if (n < 0)
     {
-        s = "(null)";
-        i = 6;
+        count = ft_putchar('-');
+        count = n *= -1;
     }
+    else if (n >= 0 && n <= 9)
+        count = ft_putchar(n + '0');    
     else
     {
-        while (s[i])
-            write(1, &s[i++], 1);
+        count = ft_putnbr(n / 10);
+        count = ft_putchar(n % 10);
     }
-    return (i);
+    return (count);
 }
