@@ -6,7 +6,7 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 12:11:37 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/20 16:17:22 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/20 18:34:52 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int ft_putnbr(int n)
     else
     {
         count = ft_putnbr(n / 10);
-        count = ft_putchar(n % 10);
+        count = ft_putnbr(n % 10);
     }
     return (count);
 }

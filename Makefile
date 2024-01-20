@@ -6,22 +6,23 @@
 #    By: slouham <slouham@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 15:48:37 by slouham           #+#    #+#              #
-#    Updated: 2024/01/20 12:10:48 by slouham          ###   ########.fr        #
+#    Updated: 2024/01/20 18:41:36 by slouham          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
+CC = cc
+
 SRC = ft_printf.c \
 	  ft_putchar.c \
 	  ft_putstr.c \
-	  ft_putnbr.c \
-
-OBJS = $(SRC:.c=.o)
-
-CC = cc
+	  ft_putnbr.c 
+	  
 
 CFLAGS = -Wall -Wextra -Werror
+
+OBJS = $(SRC:.c=.o)
 
 AR =	ar -rc
 
