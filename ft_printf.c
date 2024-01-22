@@ -6,7 +6,7 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 13:35:13 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/20 18:39:49 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/22 21:41:33 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ static void check(char c, va_list args)
 		ft_putstr(va_arg(args, char *));
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(args, int));
+	else if (c == 'u')
+		ft_put_unsigned(va_arg(args, unsigned int));
+	else if (c == '%')
+		ft_putchar('%');
 	else
-	{
 		ft_putchar('%');
 		ft_putchar(c);
-	}
 }
 
 int		ft_printf(const char *str, ...)
@@ -50,6 +52,23 @@ int		ft_printf(const char *str, ...)
 	va_end(args);
 	return (count);
 }
+
+/* now i have to recode printf function so ...
+ * first of all i have to know what printf print if i give her %d %c %i %s %p %x %X %% %u .
+ * ok now printf return an int which is have the number of characters printed
+ * and i have to know what is this : va_list : va_start: va_arg: va_end:
+ * 
+ * variadic function: (it's not english never mind ->hiya wa7d l function li kataccepti variable number of argument)
+ *%c : print char but how can i count the character (ps : write function katreturni int)
+ %s : print string and count the characters printed
+ %i&d : ? (i think the different between i and d is in scanf function)
+ %p: ?
+ %x: ?
+ %X: ?
+ %u: ? simply write an unsigned char but wait , if i give it a negative number what will print??
+ %%: ? simply write a single % haha easy
+ and done ;) and i will be good hh
+ */
 
 /*int main()
 {
