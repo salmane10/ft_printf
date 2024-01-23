@@ -6,27 +6,35 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 13:35:13 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/22 21:41:33 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/23 15:15:22 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void check(char c, va_list args)
+static int check(char c, va_list args)
 {
+	int count;
+
+	count = 0;
 	if (c == 'c')
-		ft_putchar(va_arg(args, int));
+		return (ft_putchar(va_arg(args, int)));
 	else if (c == 's')
-		ft_putstr(va_arg(args, char *));
+		return (ft_putstr(va_arg(args, char *)));
 	else if (c == 'd' || c == 'i')
-		ft_putnbr(va_arg(args, int));
+		return (ft_putnbr(va_arg(args, int)));
 	else if (c == 'u')
-		ft_put_unsigned(va_arg(args, unsigned int));
+		return (ft_put_unsigned(va_arg(args, unsigned int)));
+	else if (c == 'x')
+		return (ft_hex_down(va_arg(args, unsigned int)));
+	else if (c == 'X')
+		return (ft_hex_up(va_arg(args, unsigned int)));	
 	else if (c == '%')
-		ft_putchar('%');
+		return (ft_putchar('%'));
 	else
-		ft_putchar('%');
-		ft_putchar(c);
+		count += ft_putchar('%');
+		count += ft_putchar(c);
+	return (count);
 }
 
 int		ft_printf(const char *str, ...)
@@ -44,14 +52,27 @@ int		ft_printf(const char *str, ...)
 	while (str[i])
 	{
 		if (str[i] == '%')
-			check(str[++i], args);
+			count += check(str[++i], args);
         else 
-			ft_putchar(str[i]);  
+			count += ft_putchar(str[i]);  
         i++;
 	}
 	va_end(args);
 	return (count);
 }
+/*
+int	main(void)
+{
+	int count = ft_printf("hello%khffff%,");
+	printf("\n");
+	ft_printf("%d", count);
+	printf("\n");
+    	int i = printf("hello%khffff%,");
+	printf("\n");
+	printf("%d", i);
+	return (0);
+}
+*/
 
 /* now i have to recode printf function so ...
  * first of all i have to know what printf print if i give her %d %c %i %s %p %x %X %% %u .
@@ -63,8 +84,8 @@ int		ft_printf(const char *str, ...)
  %s : print string and count the characters printed
  %i&d : ? (i think the different between i and d is in scanf function)
  %p: ?
- %x: ?
- %X: ?
+ %x: ? hexadicemal lower
+ %X: ? hexadicemal upper
  %u: ? simply write an unsigned char but wait , if i give it a negative number what will print??
  %%: ? simply write a single % haha easy
  and done ;) and i will be good hh
