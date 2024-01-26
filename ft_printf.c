@@ -28,7 +28,9 @@ static int check(char c, va_list args)
 	else if (c == 'x')
 		return (ft_hex_down(va_arg(args, unsigned int)));
 	else if (c == 'X')
-		return (ft_hex_up(va_arg(args, unsigned int)));	
+		return (ft_hex_up(va_arg(args, unsigned int)));
+	else if (c == 'p')
+		return (ft_putmem(va_arg(args, void *)));
 	else if (c == '%')
 		return (ft_putchar('%'));
 	else

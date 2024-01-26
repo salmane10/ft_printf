@@ -24,5 +24,5 @@ int     ft_putnbr(int n);
 int     ft_put_unsigned(unsigned int i);
 int     ft_hex_up(int nb);
 int     ft_hex_down(int nb);
-
+int	ft_putmem(void *p);
 #endif
