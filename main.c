@@ -34,7 +34,6 @@ int main()
 	
 /* printf example */
 /*
-#include "ft_printf.h"
 
 int main()
 {
@@ -49,10 +48,14 @@ int main()
 #include "ft_printf.h"
 #include <stdio.h>
 
-int main()
-{
-	int *ptr = NULL;
+int main() {
+    // Test ft_putmem with a valid memory address
+    int *ptr = NULL;
+    ft_printf("Memory address: %p\In", (void*)&ptr);
+	printf("memory address: %p\n", (void *)ptr);    
+    // Test ft_putmem with a NULL pointer
+    ft_printf("Memory address: %p\n", (void*)0);
+    printf("memory address: %p\n", (void*)0);
 
-	ft_printf("Address of ptr: %p\n", (void *)ptr);
-	printf("Address of ptr: %p\n", (void *)ptr);
+    return 0;
 }

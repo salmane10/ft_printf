@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putmem.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/29 11:57:25 by slouham           #+#    #+#             */
+/*   Updated: 2024/01/29 13:30:28 by slouham          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
-static	int print_address(unsigned long x)
+static	int print_address(unsigned long long x)
 {
 	int	counter;
 	char	*s;
@@ -20,11 +32,11 @@ static	int print_address(unsigned long x)
 int	ft_putmem(void *p)
 {
 	int count;
-	unsigned long	x;
+	unsigned long long	x;
 
 	count = 0;
-	x = (unsigned long)p;
-	if (ptr == (void *)0)
+	x = (unsigned long long)p;
+	if (p == (void *)0)
 		return (ft_putstr("(nil)"));
 	count += write(1, "0x", 2);
 	count += print_address(x);
