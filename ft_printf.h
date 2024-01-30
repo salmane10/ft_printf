@@ -6,7 +6,7 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:27:44 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/23 14:48:59 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/30 13:25:09 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int     ft_putnbr(int n);
 int     ft_put_unsigned(unsigned int i);
 int     ft_hex_up(int nb);
 int     ft_hex_down(int nb);
-int	ft_putmem(void *p);
+int     ft_putmem(void *p);
+
 #endif

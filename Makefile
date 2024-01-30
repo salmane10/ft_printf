@@ -6,7 +6,7 @@
 #    By: slouham <slouham@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/16 15:48:37 by slouham           #+#    #+#              #
-#    Updated: 2024/01/20 18:41:36 by slouham          ###   ########.fr        #
+#    Updated: 2024/01/30 13:56:06 by slouham          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,11 @@ CC = cc
 SRC = ft_printf.c \
 	  ft_putchar.c \
 	  ft_putstr.c \
-	  ft_putnbr.c 
+	  ft_putnbr.c \ 
+	  ft_hex_down.c \
+	  ft_hex_up.c \ 
+	  ft_putmem.c 
+	  
 	  
 
 CFLAGS = -Wall -Wextra -Werror

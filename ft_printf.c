@@ -6,7 +6,7 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 13:35:13 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/29 16:03:16 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/30 12:13:42 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int check(char c, va_list args)
 		return (ft_putchar('%'));
 	else
 		count += ft_putchar('%');
-		count += ft_putchar(c);
+	count += ft_putchar(c);
 	return (count);
 }
 
