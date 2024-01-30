@@ -12,9 +12,9 @@
 
 #include "ft_printf.h"
 
-static	int print_address(unsigned long long x)
+static int	print_address(unsigned long long x)
 {
-	int	counter;
+	int		counter;
 	char	*s;
 
 	s = "0123456789abcdef";
@@ -31,7 +31,7 @@ static	int print_address(unsigned long long x)
 
 int	ft_putmem(void *p)
 {
-	int count;
+	int					count;
 	unsigned long long	x;
 
 	count = 0;
@@ -42,4 +42,3 @@ int	ft_putmem(void *p)
 	count += print_address(x);
 	return (count);
 }
-

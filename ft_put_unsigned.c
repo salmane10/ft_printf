@@ -12,17 +12,17 @@
 
 #include "ft_printf.h"
 
-int    ft_put_unsigned(unsigned int i)
+int	ft_put_unsigned(unsigned int i)
 {
-    int count;
+	int	count;
 
-    count = 0;
-    if (i < 10)
-        count += ft_putchar(i + '0');
-    else
-    {
-        count += ft_put_unsigned(i / 10);
-        count += ft_put_unsigned(i % 10);
-    }
-    return (count);
+	count = 0;
+	if (i < 10)
+		count += ft_putchar(i + '0');
+	else
+	{
+		count += ft_put_unsigned(i / 10);
+		count += ft_put_unsigned(i % 10);
+	}
+	return (count);
 }

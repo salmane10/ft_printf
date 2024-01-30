@@ -6,13 +6,13 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:59:27 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/30 15:21:16 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/30 17:46:36 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int     ft_putchar(char c)
+int	ft_putchar(int c)
 {
-    return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }
