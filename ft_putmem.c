@@ -6,7 +6,7 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 11:57:25 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/29 13:30:28 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/30 15:18:47 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,4 @@ int	ft_putmem(void *p)
 	count += print_address(x);
 	return (count);
 }
+

@@ -6,7 +6,7 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 13:35:13 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/30 12:13:42 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/30 15:26:54 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,8 @@ int		ft_printf(const char *str, ...)
 
 	i = 0;
 	count = 0;
-	va_start(args, str);
 
-    if (!str)
-        return (-1);
+	va_start(args, str);
 	while (str[i])
 	{
 		if (str[i] == '%')

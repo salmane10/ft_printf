@@ -6,7 +6,7 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 17:03:07 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/20 15:00:54 by slouham          ###   ########.fr       */
+/*   Updated: 2024/01/30 15:44:42 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int     ft_putstr(char *s)
     i = 0;
     if (!s)
     {
-        s = "(null)";
-        i = 6;
+        return (ft_putstr("(null)"));
     }
     else
     {
