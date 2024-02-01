@@ -6,7 +6,7 @@
 /*   By: slouham <slouham@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 13:35:13 by slouham           #+#    #+#             */
-/*   Updated: 2024/01/30 17:34:47 by slouham          ###   ########.fr       */
+/*   Updated: 2024/02/01 10:51:17 by slouham          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int	ft_printf(const char *str, ...)
 		return (-1);
 	while (str[i])
 	{
+		if (str[i] == '%' && str[i+1] == '\0')
+			return (-1);
 		if (str[i] == '%')
 			count += check(str[++i], args);
 		else
